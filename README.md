@@ -1,3 +1,3 @@
 # ProtfolioWeb
 Welcome to my protfolio!
-All credit presevred.
+All credits presevred.
