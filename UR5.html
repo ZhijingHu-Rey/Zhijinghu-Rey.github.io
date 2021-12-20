@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Rey's Projects</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">My Projects</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Home Page</a></li>
+							<li><a href="generic.html">My Experience</a></li>
+							<li class="active"><a href="elements.html">Projects</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="mailto:zhu31@jhu.com" class="icon fa-envelope"><span class="label"> Email</span></a></li>
+							<li><a href="www.linkedin.com/in/zh-reynolds" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/ZhijingHu-Rey" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+										
+					
+<!-- Main -->
+<div id="main">
+
+
+	<!-- Post -->
+		<section class="post">
+			<header class="major">
+				<span class="date">Dec, 2021</span>
+				<h1>Move/Pick-and-Place <br />
+					Movement in UR5 Robot</h1>
+					<p><br />
+						<b>Robot Devices, Kinematics, Dynamics, and Controls</b>
+						<br />Whiting School of Engineering @ Johns Hopkins University
+						
+						<br /><br /><b>Group Memebers</b>
+						<br />Zhijing Hu, Qinxin Li, Zhikun Gan
+						<br /><br />
+					</p>
+			</header>
+
+	<!-- Posts -->
+		<section class="posts">
+			<article>
+				<header>
+				
+					<h2>What we achieved?<br />
+						</h2>
+				</header>
+				
+
+				<p>The goal for our project is to move the UR5 robot from the start position to the target position, performing the entire move-pick-and-place movements in three different method, both of which will be inside the workspace of the UR5, and close to the bottom surface. Before moving to the start position, the robot will be at the home configuration, or an intermediate configuration.
+				<br />
+
+				<img class="image fit" src="images/UR001.png" alt="" />
+
+				<br />Three different ways to control trajectory are implemented: Inverse kinematics, Resolved-rate control using differential kinematics, and Transpose-Jacobian control.</p>
+				
+				<p> By using Inverse kinematics method, the robot will move along the desired Cartesian path by finding the corresponding path in joint space. For Resolved-rate control using differential kinematics method, the desired velocity (or small, differntial Cartesian offset) is needed, and the joint space velocity (increment) could be determined by “pull that back” through the inverse of the Jacobian. By Transpose-Jacobian control method, repeat the same tasks using the transposeof the Jacobian matrix.
+				<br /><br />All simulations were successful to move the UR5 to the desired start and target poses after testing every code in R-VIZ. The start and the target locations for three different cases are using the same data 
+				
+				<img class="image fit" src="images/UR002.png" alt="" />
+
+				<br /><br />To check out the details, the complete movie files as well as code files, just click on my GitHub page of this project: <b><a href="https://github.com/ZhijingHu-Rey/Haptic-Hat-for-Visually-Impaired-Users">UR5 Robot Control Assignment.</a></b>
+				</p>	
+				</ul>
+			</article>
+			
+			
+			<!-- BackButton -->
+			
+			<br /><br />
+
+			<ul class="actions special">
+				<li><a href="elements.html" class="button">Back to Projects</a></li>
+			</ul>
+
+		</section>	
+		
+</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						<!-- <section class="split contact">
+							</section> -->
+						<section>
+							<h3>Phone</h3>
+							<p>(732) 322-1531</p>
+							<h3>Email</h3>
+							<p><a href="mailto:zhu31@jhu.com">zhu31@jhu.edu</a></p>
+							<h3>Social</h3>
+							<ul class="icons alt">
+									<li><a href="mailto:zhu31@jhu.com" class="icon fa-envelope"><span class="label"> Email</span></a></li>
+									<li><a href="www.linkedin.com/in/zh-reynolds" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+									<li><a href="https://github.com/ZhijingHu-Rey" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Zhijing(Rey) Hu</li><li>Created by: <a href="https://github.com/ZhijingHu-Rey"> Zhijing(Rey) Hu</a></li></ul>
+					</div>
+					
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
