@@ -67,7 +67,10 @@
 				</header>
 				
 
-				<p>The goal for our project is to move the UR5 robot from the start position to the target position, performing the entire move-pick-and-place movements in three different method, both of which will be inside the workspace of the UR5, and close to the bottom surface. Before moving to the start position, the robot will be at the home configuration, or an intermediate configuration.
+				<p>The goal for our project is to move the UR5 robot from the start position to the target position, performing the entire move-pick-and-place movements in three different method, both of which will be inside the workspace of the UR5, and close to the bottom surface. Before moving to the start position, the robot will be at the home configuration, or an intermediate configuration. 
+					
+				<br /><br />Now, a feasible motion path for UR5 robot is developed and fully simulated in ROS.
+
 				<br />
 
 				<img class="image fit" src="images/UR001.png" alt="" />
@@ -75,7 +78,7 @@
 				<br />Three different ways to control trajectory are implemented: Inverse kinematics, Resolved-rate control using differential kinematics, and Transpose-Jacobian control.</p>
 				
 				<p> By using Inverse kinematics method, the robot will move along the desired Cartesian path by finding the corresponding path in joint space. For Resolved-rate control using differential kinematics method, the desired velocity (or small, differntial Cartesian offset) is needed, and the joint space velocity (increment) could be determined by “pull that back” through the inverse of the Jacobian. By Transpose-Jacobian control method, repeat the same tasks using the transposeof the Jacobian matrix.
-				<br /><br />All simulations were successful to move the UR5 to the desired start and target poses after testing every code in R-VIZ. The start and the target locations for three different cases are using the same data 
+				<br /><br />All simulations were successful to move the UR5 to the desired start and target poses after testing every code in R-VIZ. The start and the target locations for three different cases are using the same data. 
 				
 				<img class="image fit" src="images/UR002.png" alt="" />
 
