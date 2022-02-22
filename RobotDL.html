@@ -45,14 +45,16 @@
 		<section class="post">
 			<header class="major">
 				<span class="date">Dec, 2021</span>
-				<h1>Move/Pick-and-Place <br />
-					Movement in UR5 Robot</h1>
+				<h1>3D Grabbing Platform and Grabbing Method<br />
+					based on Deep Learning</h1>
 					<p><br />
-						<b>Robot Devices, Kinematics, Dynamics, and Controls</b>
-						<br />Whiting School of Engineering @ Johns Hopkins University
+						<b>Zhejiang Province's Key Laboratory of 3D Printing Process and Equipment</b>
+						<br /> @ Zhejiang University
 						
+						<br /><br /><b>Advisor</b>
+						<br />Senyang Wu
 						<br /><br /><b>Group Memebers</b>
-						<br />Zhijing Hu, Qinxin Li, Zhikun Gan
+						<br />Zhijing Hu, Keqin Wang
 						<br /><br />
 					</p>
 			</header>
@@ -62,27 +64,30 @@
 			<article>
 				<header>
 				
-					<h2>What we achieved?<br />
+					<h2>About the Invention<br />
 						</h2>
 				</header>
 				
 
-				<p>The goal for our project is to move the UR5 robot from the start position to the target position, performing the entire move-pick-and-place movements in three different method, both of which will be inside the workspace of the UR5, and close to the bottom surface. Before moving to the start position, the robot will be at the home configuration, or an intermediate configuration. 
-					
-				<br /><br />Now, a feasible motion path for UR5 robot is developed and fully simulated in ROS.
+				<p> To complete the designed robot in short time with low cost and high precision, the 3D printing method would be our best 
+					manufacturing method in the laboratory. The printing material is PLA (polylactic acid), with 17.5mm in diameter.
 
+				<br /><br />The grabbing hand is designed in three pieces of grabbing claws. Instead of two, it has much more better grabbing effect facing different shapes of the object. 
+				The design of limiting position self-locking allows the gripper to better grip objects without relying on the steering gear.  The simple structure gives it high reliability and low cost, 
+				and the use of connecting rod makes it easy to scale, providing strong modification potential and wide space for improvement and optimization.  
 				<br />
 
-				<img class="image fit" src="images/UR001.png" alt="" />
+				<img class="image fit" src="images/RO001.jpg" alt="" />
 
-				<br />Three different ways to control trajectory are implemented: Inverse kinematics, Resolved-rate control using differential kinematics, and Transpose-Jacobian control.</p>
+				<br />The entire system consists of 5 sub-systems: one control system, one driving belt system(grabbing platform), one robot system(grabbing system), one acquisition system and one object type and pose identification system. 
+				The simple version of the grabbing performance is using 8cm x 8cm cube with three different color in red, green, and blue as the target objects, and the different poses and velocities of them will be generated through the platform.
 				
-				<p> By using Inverse kinematics method, the robot will move along the desired Cartesian path by finding the corresponding path in joint space. For Resolved-rate control using differential kinematics method, the desired velocity (or small, differntial Cartesian offset) is needed, and the joint space velocity (increment) could be determined by “pull that back” through the inverse of the Jacobian. By Transpose-Jacobian control method, repeat the same tasks using the transposeof the Jacobian matrix.
-				<br /><br />All simulations were successful to move the UR5 to the desired start and target poses after testing every code in R-VIZ. The start and the target locations for three different cases are using the same data. 
+				<br /><br />The control system is used for controlling the driving belt system to move along a track, and the acquisition system will acquire and preprocess the original three-dimensional point cloud data in a visual field, then later outputing them to the next sub-system, the object type and pose identification system
 				
-				<img class="image fit" src="images/UR002.png" alt="" />
+				<br /><br />The object type and pose identification system will identify three-dimensional point cloud data of the target object by using identification model based on a deep learning network, determining the type of object and its corresponding pose information. The outputs about the specific information will be sent to the control system.
+				Once the data is received, the control system will plan a moving path according to the recognition result, completing the moving and grabbing actions.
 
-				<br /><br />To know more about the details, including the simulation movie files, please check my GitHub page of this project: <b><a href="https://github.com/ZhijingHu-Rey/Move-Pick-and-Place-by-UR5-Robot">UR5 Robot Control Assignment.</a></b>
+				<br /><br />The project is later worked on and improved by Zhejiang University, and the invention now has successfully acknowledged and became a <b><a href="https://patents.google.com/patent/CN110948492B/en?sort=new">granted patent.</a></b>
 				</p>	
 				</ul>
 			</article>
