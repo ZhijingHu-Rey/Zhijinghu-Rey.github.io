@@ -40,84 +40,78 @@
 <!-- Main -->
 <div id="main">
 
-	<!-- Featured Post -->
-		<!-- <article class="post featured">
+
+	<!-- Post -->
+		<section class="post">
 			<header class="major">
-				<span class="date">Aug, 2021</span>
-				<h2><a href="#">Recent Activity<br />
-				</a></h2>
-				<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-				facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-				amet nullam sed etiam veroeros.</p>
+				<span class="date">Dec, 2020</span>
+				<h1>Mechanism Linkage Design Project named <br />
+					4-Legs Walking Robot</h1>
+					<p><br />
+						<b>Design of Mechanism</b>
+						<br />School of Engineering @ Rutgers University - New Brunswick
+						
+						<br /><br /><b>Advisor</b>
+						<br />Prof. Xi Gu
+
+						<br /><b>Group Memebers</b>
+						<br />Zhijing Hu, Pik Luen Li, Feihao Ding, Dawei Hu
+						<br /><br />
+					</p>
 			</header>
-			<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
-			<ul class="actions special">
-				<li><a href="#" class="button large">Full Story</a></li>
-			</ul>
-		</article>-->
 
 	<!-- Posts -->
 		<section class="posts">
-			
 			<article>
 				<header>
-					<span class="date">Jun, 2019 - Aug, 2019</span>
-					<h2><a href="slipandfall.html">Inertial Sensor-Based Slip Detection<br />
-						in Human Walking</a></h2>
+				
+					<h2>About our project<br />
+						</h2>
 				</header>
-				<a href="slipandfall.html" class="image fit"><img src="images/SF001.png" alt="" /></a>
-				<p> Helped to developed a novel, real-time slip detection and estimation algorithm during human walking. Later studied and learnt to bulid a small size and lightweight wearable slip detection system, which consistis of five small inertial measurements units placed on user's leg.
-				</p>
-				<ul class="actions special">
-					<li><a href="slipandfall.html" class="button">Full Story</a></li>
-				</ul>
-			</article>	
-			
-			
-			<article>
-				<header>
-					<span class="date">July, 2019 - Aug, 2019</span>
-					<h2><a href="RobotDL.html">3D Grabbing Platform and<br />
-						Grabbing Method based on Deep Learning</a></h2>
-				</header>
-				<a href="RobotDL.html" class="image fit"><img src="images/RO000.jpg" alt="" /></a>
-				<p> The invention discloses a 3D grabbing system with the grabbing method based on deep learning, involving a main grabbing system, an acquisition system and an object type/pose identification system. </p>
-				<ul class="actions special">
-					<li><a href="RobotDL.html" class="button">Full Story</a></li>
-				</ul>
-			</article>
+				
 
+				<p> The prototype of our design is 4-legs mammals, that is why we are using the four-bar linkage. 
+					The cover of on the previous page is just a rough demo of the CAD model.
 
-			<article>
-				<header>
-					<span class="date">May, 2019 - July, 2019</span>
-					<h2><a href="Delta.html">Tripod Arms Grabbing Robot based on<br />
-						Delta 3D Printer</a></h2>
-				</header>
-				<a href="Delta.html" class="image fit"><img src="images/D000.png" alt="" /></a>
-				<p> The goal of the project is to bulid up a three-dimensional grabbing robot based on Delta-Pi 3d Printer, which comprise a grabbing system with a driving belt system as the grabbing platform. </p>
-				<ul class="actions special">
-					<li><a href="Delta.html" class="button">Full Story</a></li>
+				<br /><br />The reasons why this kind of mechanism is needed in our design, are to reduce or eliminate the limitations of robots with wheels only, and to perform more complex works where the robots are needed instead of humans themselves.
+
+				<br /><br />As for our main design objective, according to the previous part, is to design a flexible walking robot that resembleed with 4 legs linkage, performing different walking ways similar as the dogs, the elephants or mice, depending on disparate situations, with a simple four-bar linkages system. The footpath that is similar to mammals is shown below. The stride part is needed to be as flat as possible to keep balance.
+
+				<br />
+
+				<img class="image fit" src="images/FL000.png" alt="" />
+
+				<br />The spatial constraints for our project will be 40 centimeters for the height of the step, and 50 centimeters long for the stride in our demo calculations and demostration.
+				In Total, in one single foot system, there are 4 links and 4 full joints. By calculation, the Degree of freedom equals 1.
+
+				<p>In order to have more information about the point that is in touch with the ground, we have done some analysis of our design.
+
+				<br /><br />The first one is the position analysis. The whole design is driven by a motor connected to link AC, so it is a crank. If we assume the length of AB is equal to a hundred centimeters, AC is 20cm, CD is 80cm, BD is 48cm, CE is 160cm, alpha is 20 degree, and we also know the angular velocity of AC is 1.57 rad/s. We could find out the position of point E when the link AC is rotating from 0 degree to 360 degree.
+				The calculations could be found on my GitHub page.
+
+				<img class="image fit" src="images/FL002.png" alt="" />
+
+				<br /><br />We have also done the velocity analysis on point E. Information obtained in the position analysis could be used here to calculate the velocity. The calculation process is shown plotted through Matlab. The upper graph shows the y component of velocity of point E versus angle of theta 2 and the lower graph shows the x component. The horizontal speed of the point touching the ground should be as uniform as possible so that they don't skid or shake the machine. Also, the velocity should be larger when point E is not touching the ground. 
+				With the velocity analysis, further modifications could be done to make improvements for our design.
+
+				<br /><br /><img class="image fit" src="images/FL003.png" alt="" />
+
+				<br /><br />To know more about the details, please check my GitHub page of this project: <b><a href="https://github.com/ZhijingHu-Rey/FourLegsWalkingRobo-LinkagesDesign">4-Legs Walking Robot.</a></b>
+				</p>	
 				</ul>
 			</article>
 			
-		</section>
+			
+			<!-- BackButton -->
+			
+			<br /><br />
+
+			<ul class="actions special">
+				<li><a href="elements.html" class="button">Back to Projects</a></li>
+			</ul>
+
+		</section>	
 		
-	<!-- Footer -->
-		<footer>
-			<div class="pagination">
-				<a href="elements.html" class="previous">Prev</a>
-				<a href="elements.html" class="page">1</a>
-				<a href="elements2.html" class="page active">2</a>
-				<!-- <a href="#" class="page">3</a>
-				<span class="extra">&hellip;</span>
-				<a href="#" class="page">8</a>
-				<a href="#" class="page">9</a>
-				<a href="#" class="page">10</a> 
-				<a href="#" class="next">Next</a> -->
-			</div>
-		</footer>
-	
 </div>
 
 				<!-- Footer -->
@@ -164,7 +158,7 @@
 					<div id="copyright">
 						<ul><li>&copy; Zhijing(Rey) Hu</li><li>Created by: <a href="https://github.com/ZhijingHu-Rey"> Zhijing(Rey) Hu</a></li></ul>
 					</div>
-
+					
 			</div>
 
 		<!-- Scripts -->
