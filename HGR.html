@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Rey's Projects</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">My Projects</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Home Page</a></li>
+							<li><a href="generic.html">My Experience</a></li>
+							<li class="active"><a href="elements.html">Projects</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="mailto:zhu31@jhu.com" class="icon fa-envelope"><span class="label"> Email</span></a></li>
+							<li><a href="www.linkedin.com/in/zh-reynolds" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/ZhijingHu-Rey" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+										
+					
+<!-- Main -->
+<div id="main">
+
+
+	<!-- Post -->
+		<section class="post">
+			<header class="major">
+				<span class="date">Apr - May, 2022</span>
+				<h1>Various Hand Gestures<br />
+					and Motion Recognition</h1>
+					<p><br />
+						<b>Deep Learning Final Project</b>
+						<br />Whiting School of Engineering @ Johns Hopkins University
+						
+						<br /><br /><b>Group Memebers</b>
+						<br />Zhijing Hu, Zhikun Gan, Yifei Che
+						<br /><br />
+					</p>
+			</header>
+
+	<!-- Posts -->
+		<section class="posts">
+			<article>
+				<header>
+				
+					<h2>Why hand gesture recognition?<br />
+						</h2>
+				</header>
+				
+
+				<p>Hand gesture recognition is a trending topic in the field of computer vision and pattern recognition. Although great progress has been made recently, fast and robust Real-time recognition of hand gestures remains a challenging task since the existing methods have not presented a practical compromise between the performance and the efficiency. In the past, people need to use remote controls and joysticks as controlling device for many HCI. A hand-gesture-based interface provides higher flexibility while also being user-friendly because the user could convey their messages or perform their task only showing his hand in front of the camera. </p>
+				
+				<header>
+				
+					<h2>About our project<br />
+						</h2>
+				</header>
+				
+				<p>The main aim of our project is to classify and recognize the hand gestures. HGR is a technique in which we use different algorithms and concepts of various techniques, such as image processing and neural networks, to understand the gesture or movement of the hand. MediaPipe framework, with profound open-source libraries involving Tensorflow in OpenCV, CV2 and PyTorch, would be our main tools for utilization.
+				<br /><img class="image fit" src="images/HGR002.png" alt="" />
+
+				<p>MediaPipe is a Framework for building machine learning pipelines for processing time-series data like video, audio, etc. Through MediaPipe, hand with its corresponding key points could be recognized. MediaPipe returns a total of 21 key points for each detected hand. The maximum number of hand in the live/recorded video, or images could be adjusted with different needs. These key points will be fed into a pre-trained gesture recognizer network to recognize the hand pose.
+				<br /><br /><img class="image fit" src="images/HGR003.png" alt="" />
+				
+				<br />At the first stage of our project, we built a convolutional neural network for classifying the Sign Language MNIST dataset, which consists of over 2,7000 training samples and 7000 test samples and covers 24 different classes of hand gestures. Our CNN consists of 2 convolutional layers and 2 fully connected layer. Although the CNN seems shallow and simple, considering the small size of the input image, which is 28*28, the size is adequate and it achieved a test accuracy of 97.6 %. One obvious advantage of small network is its response speed. Therefore, this stage of our project proved that with proper image pre-processing techniques, our project are capable of achieving real-time response with satisfying classification accuracy. 
+				<br />Here is our model architecture used for our own dataset. 
+				<br /><img class="image fit" src="images/HGR007.png" alt="" />
+				With only the neural network, we are limited to pre-processed images with fixed size and style. However, our goal is to build a more generalized project that can be used in real-world environments. The next stage of our project aims in solving this generalization problem. First of all, we are only concerned about the hand gesture, so that we used the open source MediaPipe Hands to extract the landmarks of the detected hands. If we implement the classifier based only on the landmarks, the information will be restricted and it will significantly limit the ability of generalization of our project, for example, it cannot distinguish the orientation of the hands nor the variations in left and right hands. To address this issue, we extracted the part of the image which contains the hand, then perform classification based on both the cropped image and the landmarks. We came up an object extraction method based on the landmarks, where we crop out the images around the landmark positions, then various image pre-processing methods were performed on the cropped images, including image resizing and intensity normalization, to make it fit with our CNN. After the images being pre-processed, we pass it to our CNN for feature extraction, then before entering the classifier, the flattened features are concatenated with the landmarks, so that both extracted features and the landmarks will contribute to the classification.
+				
+				<br /><br />The complete process of our method is shown in the flow chart below.
+				<br /><img class="image fit" src="images/HGR004.png" alt="" />
+
+				<br /><br />We firstly test our model using the Sign Language MNIST Dataset from Kaggle. Although the existing dataset are large, it only focuses on analyzing the RGB images. Comparing to adding landmarks to user's hand, it lacks of the good accuracy and quick response speed on the interface in the live or recorded video. Moreover, over 20 gestures are difficult for every user to memorize and performance.
+				
+				<header>
+				
+					<h2>Dataset<br />
+						</h2>
+				</header>
+
+				<p>Instead of making every single gesture conveys a single English letter, we started to build our own gestures dataset making a single gesture in a more convenient way, which could be read or translated into a English phase or sentence, such as "Gimme a second", "Call me later", etc..   
+				<br />There has 8 static hand gestures are established with different sign meanings in total, including "Stop", "Good", "Yes", "Love you", "No way", "Okay", "Gimme a second", "Call me later". What we put in the first place is creating our own training dataset, collecting RGB images through RGB camera connected to the computer, with their corresponding hand landmarks at the same time. The samples contain both left hand and right hand with clear and correct gestures performed. Over 1,000 pictures of samples are collected for each gesture. For test dataset, it is much smaller than the training one. Only 200 pictures are collected in total from different group members under different test environment.
+
+
+				<header>
+				
+					<h2>Results<br />
+						</h2>
+				</header>
+				<p> The models are trained on the 8,000+ training images for both RGB images and landmark images, and later evaluated on the 1,000+ validation images, respectively. After testing on different trails training our model with different learning rates and epoch numbers, the performance of the model is achieving a satisfying value both in training loss and validation loss with 100 epoch numbers. The training loss and validation loss are drawn in red curve and blue curve, respectively.
+				<br /><img class="image fit" src="images/HGR005.jpg" alt="" />
+				<br />The overall test accuracy is successfully achieving to 99.6% with real-time speed of 60 (± 20) fps feedback interface, varying with different hardware. Also, here is the outcomes of the predicted gestures with actual after training the model. 10 examples of prediction results in total are displayed below.
+				<img class="image fit" src="images/HGR006.png" alt="" />
+
+				Due to the limitation on time and resources, we only achieved the method of static hand gesture recognition. Our future goals are, firstly, enlarging our existing dataset by collecting the gesture images and landmarks performed by more users, as well as more hand gestures. Next, it is considered to collect negative samples, the blurred or not fully performed gestures, for weak classifiers according to the feature values generated for now. Moreover, dynamic hand gesture recognition (hand motions recognition) will be considered to study and work on.
+				
+				<br /><br />To know more about the details, please check my GitHub page of this project: <b><a href="https://github.com/ZhijingHu-Rey/Various-Hand-Gestures-Recognition">Various Hand Gestures Recognition.</a></b>
+				</p>	
+				</ul>
+			</article>
+			
+			
+			<!-- BackButton -->
+			
+			<br /><br />
+
+			<ul class="actions special">
+				<li><a href="elements.html" class="button">Back to Projects</a></li>
+			</ul>
+
+		</section>	
+		
+</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<form method="post" action="mailto:zhu31@jhu.edu">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						<!-- <section class="split contact">
+							</section> -->
+						<section>
+							<h3>Phone</h3>
+							<p>(732) 322-1531</p>
+							<h3>Email</h3>
+							<p><a href="mailto:zhu31@jhu.com">zhu31@jhu.edu</a></p>
+							<h3>Social</h3>
+							<ul class="icons alt">
+									<li><a href="mailto:zhu31@jhu.com" class="icon fa-envelope"><span class="label"> Email</span></a></li>
+									<li><a href="www.linkedin.com/in/zh-reynolds" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+									<li><a href="https://github.com/ZhijingHu-Rey" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Zhijing(Rey) Hu</li><li>Created by: <a href="https://github.com/ZhijingHu-Rey"> Zhijing(Rey) Hu</a></li></ul>
+					</div>
+					
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
