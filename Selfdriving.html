@@ -45,11 +45,13 @@
 		<section class="post">
 			<header class="major">
 				<span class="date">Dec, 2020</span>
-				<h1>Self-Driving Vehicle Control<br />
+				<h1>Self-Driving Vehicle Control in Carla<br />
 					from Coursera</h1>
 					<p><br />
-						<b>Intro to Self-Driving Cars course</b>
-						<br /> offered by University of Toronto on Coursera
+						<b>Intro to Self-Driving Cars Course</b>
+						<br /><br />Offered by University of Toronto 
+						<br />on Coursera
+
 						<br /><br /><b>Student</b>
 						<br />Zhijing Hu
 					</p>
@@ -66,23 +68,51 @@
 				
 
 				<p>This poject is the final project assignment of introduction to Self Driving Cars course offered by University of Toronto on Coursera. And more helpful resources could be found on Internet for preparing and self-learning.
+				
 
-				<br /><br />In this project, the controller programming are written in Python to realize a self-driving car, which can autonomously drive around a track in Carla Simulator. The output values of the controller will be the vehicle throttle, brake and steering angle commands. The throttle and brake values come from the Longitudinal speed control, and the steering comes from the Lateral Control.
+				<br /><br />In this project, the controller programming are written in Python to realize a self-driving car, which can autonomously drive around a track in Carla Simulator. 
+				The output values of the controller will be the vehicle throttle, brake and steering angle commands. 
+				The throttle and brake values come from the Longitudinal speed control, and the steering comes from the Lateral Control. 
+				
+				<br /><br />Helpful resouces here for better understanding the <b><a href="https://github.com/ahmedmoawad124/Self-Driving-Vehicle-Control"> method</a></b> used for completing this project.
 
-				<br /><br />For the vehicle longitudinal control, a PID controller was selected. PID controller is easy implementation and tune, and could provides results in a wide range of systems. For the vehicle lateral control, the Stanley controller was selected due to its great performance and the huge amount of information found.
-				<br />
+				<img class="image fit" src="images/SD000.png" alt="" />
+				
+				<h2>methods<br />
+				</h2>
 
+				For the vehicle longitudinal control, a PID controller was selected. PID controller is easy implementation and tune, and could provides results in a wide range of systems. 
+				The PID controller consists of three components. First, a pure gain Kp that scales the vehicle acceleration based on the speed error. This ensures that the vehicle is accelerating in the correct direction with the magnitude proportional to the error.
+				Second, in integral term KI sets up the output based on accumulated past errors. This ensures the steady steed errors are eliminated for ramp referencing.
+				Finally, the derivative term KD dampens the overshoot caused by the integration term.
+
+				<br /><br />To complete the longitudinal control, we must convert the acceleration output from the PID controller into throttle and brake commands. 
+				For simplicity, positive outputs will be throttle and negative outputs will correspond to brake.
+
+				<br /><br />
+				<img class="image fit" src="images/SD003.png" alt="" />
+				
+				<br />For the vehicle lateral control, the Stanley controller was selected due to its great performance and the huge amount of information found. 
+				The Stanley method is a nonlinear feedback function of the cross track error, measured from the center of the front axle to the nearest path point.
 				<img class="image fit" src="images/SD001.png" alt="" />
 
-				<br />To realize the controller functionality, firstly, using the front axle coordinates and the closest waypoint coordinates to the vehicle to calculate the Cross track error. 
+				To realize the controller functionality, firstly, using the front axle coordinates and the closest waypoint coordinates to the vehicle to calculate the Cross track error. 
 				Then to estimate the Heading error by calculating the current angle of the road, using the current and the next waypoint. 
 				
 				<br /><br />Later, substracting the current yaw angle of the vehicle to obtain the Heading error is necessary.
 				Finally, to find the total steering angle by adding up both the Cross track and the Heading errors.
+				<br /><br />
 
-
-				<br /><br />To know more about the details, please check my GitHub page of this project: <b><a href="https://github.com/ZhijingHu-Rey/Final-Project-on-Coursera-Self-Driving-Vehicle-Control/tree/main">Self-Driving Vehicle Control.</a></b>
-				</p>	
+				<h2>Results<br />
+				</h2>
+				
+				Now the trajectory of the vehicle in Carla has been drawn with corresponding vehicle status, involving the Forward speeds, the Throttles, the Brakes, and the Steers.
+				
+				<img class="image fit" src="images/SD002.png" alt="" />
+				
+				<br />To know more about the details, please check my GitHub page of this project: <b><a href="https://github.com/ZhijingHu-Rey/Final-Project-on-Coursera-Self-Driving-Vehicle-Control/tree/main">Self-Driving Vehicle Control</a></b> in Carla.
+				And if you have any trouble on installing Carla Simulator, check this <b><a href="https://www.coursera.org/learn/intro-self-driving-cars/supplement/45O6L/lesson-1-supplementary-reading-carla-overview-self-driving-car-simulation">link</a></b> for more details.	
+			</p>	
 				</ul>
 			</article>
 			
